@@ -10,19 +10,19 @@ const sleepSchema = mongoose.Schema(
       type: String,
     },
     acceleration_x: {
-      type: Int32Array,
+      type: Number,
     },
     acceleration_y: {
-      type: Int32Array,
+      type: Number,
     },
     acceleration_z: {
-      type: Int32Array,
+      type: Number,
     },
     heart_rate: {
-      type: Int32Array,
+      type: Number,
     },
     activity_count: {
-      type: Int32Array,
+      type: Number,
     },
   },
   {

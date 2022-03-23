@@ -4,6 +4,7 @@
   "description": "Smart Bed System Client Application",
   "main": "server.js",
   "scripts": {
+    "start": "node bend/server.js",
     "server": "nodemon bend/server.js",
     "client": "npm start --prefix fend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
