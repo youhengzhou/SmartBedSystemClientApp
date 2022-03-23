@@ -9,13 +9,13 @@ const getSleep = asyncHandler(async (req, res) => {
 });
 
 const setSleep = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!req.body.patientId) {
     res.status(400);
-    throw new Error("Text is required");
+    throw new Error("patientId is required");
   }
 
   const sleep = await SleepModel.create({
-    text: req.body.text,
+    patientId: req.body.patientId,
     epoch: req.body.epoch,
     acceleration_x: req.body.acceleration_x,
     acceleration_y: req.body.acceleration_y,

@@ -7,7 +7,7 @@ const sleepSchema = mongoose.Schema(
       required: [true, "Text is required"],
     },
     epoch: {
-      type: String,
+      type: Number,
     },
     acceleration_x: {
       type: Number,
