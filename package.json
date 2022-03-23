@@ -1,12 +1,13 @@
 {
   "name": "bend",
   "version": "1.0.0",
-  "description": "Goalsetter app",
+  "description": "Smart Bed System Client Application",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon bend/server.js"
+    "start": "nodemon bend/server.js",
+    "client": "npm start --prefix fend"
   },
-  "author": "Just Me",
+  "author": "DrJones",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
