@@ -2,12 +2,27 @@ const mongoose = require("mongoose");
 
 const sleepSchema = mongoose.Schema(
   {
-    text: {
+    patientId: {
       type: String,
       required: [true, "Text is required"],
     },
-    text2: {
+    epoch: {
       type: String,
+    },
+    acceleration_x: {
+      type: Int32Array,
+    },
+    acceleration_y: {
+      type: Int32Array,
+    },
+    acceleration_z: {
+      type: Int32Array,
+    },
+    heart_rate: {
+      type: Int32Array,
+    },
+    activity_count: {
+      type: Int32Array,
     },
   },
   {
