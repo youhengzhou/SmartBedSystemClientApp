@@ -31,7 +31,7 @@ app.options(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/sleepdata", require("./routes/routes"));
+app.use("/api", require("./routes/routes"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../fend/build")));

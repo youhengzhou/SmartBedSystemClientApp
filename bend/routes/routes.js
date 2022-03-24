@@ -22,16 +22,16 @@ const {
 // router.route("/:id").put(updateSleep).delete(deleteSleep);
 
 // Get, will get sleep data with a get command
-router.get("/", getSleep);
+router.get("/sleepdata", getSleep);
 
 // Post, create a sleep data entry
-router.post("/", setSleep);
+router.post("/sleepdata", setSleep);
 
 // Put, update a user's sleep data entry using id
-router.put("/:id", updateSleep);
+router.put("/sleepdata/:id", updateSleep);
 
 // Delete, delete a sleep data entry
-router.delete("/:id", deleteSleep);
+router.delete("/sleepdata/:id", deleteSleep);
 
 // Get, will get alarm data with a get command
 router.get("/alarm", getAlarm);

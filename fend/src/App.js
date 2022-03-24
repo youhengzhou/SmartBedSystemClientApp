@@ -5,8 +5,8 @@ import { Route, Routes } from "react-router-dom";
 
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
-import RecordList from "./components/recordList";
 import SleepData from "./components/SleepData";
+import AlarmData from "./components/AlarmData";
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
       <div style={{ margin: 20 }}>
         <Routes>
           <Route exact path="/" element={<SleepData />} />
+          <Route exact path="/alarm" element={<AlarmData />} />
         </Routes>
       </div>
     </div>
