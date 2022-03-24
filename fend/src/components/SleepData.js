@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const axios = require("axios");
+// const axios = require("axios");
 
 export default function SleepData() {
   const [data, setData] = useState([]);
@@ -8,6 +8,16 @@ export default function SleepData() {
   //     const response = await axios.get("/api/sleepdata");
   //     return response.data;
   //   };
+
+  //   axios
+  //     .get("/api/sleepdata")
+  //     .then((res) => {
+  //       console.log(res);
+  //       setData(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
 
   // useEffect(() => {
   //   fetch("http://localhost:5000/api/sleepdata")
@@ -38,19 +48,9 @@ export default function SleepData() {
   };
 
   useEffect(() => {
-    console.log("comeon");
+    console.log("Retrieving Sleep Data");
     getAllSleepData();
   });
-
-  //   axios
-  //     .get("/api/sleepdata")
-  //     .then((res) => {
-  //       console.log(res);
-  //       setData(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
 
   return (
     <div>
@@ -63,8 +63,9 @@ export default function SleepData() {
             <th>Acceleration X</th>
             <th>Acceleration Y</th>
             <th>Acceleration Z</th>
-            <th>Heart Rate</th>
             <th>Activity Count</th>
+            <th>Heart Rate</th>
+            <th>REM Stage</th>
           </tr>
         </thead>
         <tbody>
@@ -75,8 +76,9 @@ export default function SleepData() {
               <td>{item.acceleration_x}</td>
               <td>{item.acceleration_y}</td>
               <td>{item.acceleration_z}</td>
-              <td>{item.heart_rate}</td>
               <td>{item.activity_count}</td>
+              <td>{item.heart_rate}</td>
+              <td>{item.rem}</td>
             </tr>
           ))}
         </tbody>

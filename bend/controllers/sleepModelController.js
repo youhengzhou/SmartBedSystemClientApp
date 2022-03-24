@@ -20,8 +20,9 @@ const setSleep = asyncHandler(async (req, res) => {
     acceleration_x: req.body.acceleration_x,
     acceleration_y: req.body.acceleration_y,
     acceleration_z: req.body.acceleration_z,
-    heart_rate: req.body.heart_rate,
     activity_count: req.body.activity_count,
+    heart_rate: req.body.heart_rate,
+    rem: req.body.rem,
   });
 
   res.status(200).json(sleep);

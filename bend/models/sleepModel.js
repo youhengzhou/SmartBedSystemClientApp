@@ -18,10 +18,13 @@ const sleepSchema = mongoose.Schema(
     acceleration_z: {
       type: Number,
     },
+    activity_count: {
+      type: Number,
+    },
     heart_rate: {
       type: Number,
     },
-    activity_count: {
+    rem: {
       type: Number,
     },
   },
