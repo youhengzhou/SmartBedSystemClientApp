@@ -1,7 +1,7 @@
-// so basically, all the resources in my api will have its own
-// routes in the routes goalRoutes folder.
+// all the resources in for the server's api will have its own
+// routes in the routes folder.
 
-const express = require("express"); // common js syntax
+const express = require("express");
 const router = express.Router();
 const {
   getSleep,
@@ -10,19 +10,20 @@ const {
   deleteSleep,
 } = require("../controllers/sleepModelController");
 
-router.route("/").get(getSleep).post(setSleep);
-router.route("/:id").put(updateSleep).delete(deleteSleep);
+// Alternative way of creating routes
+// router.route("/").get(getSleep).post(setSleep);
+// router.route("/:id").put(updateSleep).delete(deleteSleep);
 
-// // Http website will get resources with a get command
-// router.get("/", getGoals);
+// Get, will get resources with a get command
+router.get("/", getSleep);
 
-// // Post, create a goal
-// router.post("/", setGoal);
+// Post, create a sleep data entry
+router.post("/", setSleep);
 
-// // Put, update a goal
-// router.put("/:id", updateGoal);
+// Put, update a user's sleep data entry using id
+router.put("/:id", updateSleep);
 
-// // Delete, delete a goal
-// router.delete("/:id", deleteGoal);
+// Delete, delete a sleep data entry
+router.delete("/:id", deleteSleep);
 
 module.exports = router;
