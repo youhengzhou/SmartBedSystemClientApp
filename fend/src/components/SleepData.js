@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+const axios = require("axios");
 
 export default function SleepData() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/api/sleepdata")
+    fetch("http://localhost:5000/api/sleepdata")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
