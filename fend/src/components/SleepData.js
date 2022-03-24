@@ -4,12 +4,53 @@ const axios = require("axios");
 export default function SleepData() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  //   const getGoals = async (token) => {
+  //     const response = await axios.get("/api/sleepdata");
+  //     return response.data;
+  //   };
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api/sleepdata")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  //   const getAllSleepData = () => {
+  //     axios
+  //       .get(`http://localhost:5000/api/sleepdata`, { withCredentials: true })
+  //       .then((response) => {
+  //         data(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(" error", error);
+  //       });
+  //   };
+
+  const getAllSleepData = () => {
     fetch("http://localhost:5000/api/sleepdata")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.log(err));
-  }, []);
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      });
+  };
+
+  useEffect(() => {
+    console.log("comeon");
+    getAllSleepData();
+  });
+
+  //   axios
+  //     .get("/api/sleepdata")
+  //     .then((res) => {
+  //       console.log(res);
+  //       setData(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
 
   return (
     <div>

@@ -4,7 +4,7 @@ const sleepSchema = mongoose.Schema(
   {
     patientId: {
       type: String,
-      required: [true, "Text is required"],
+      required: [true, "Patient's ID is required"],
     },
     epoch: {
       type: Number,
