@@ -32,10 +32,10 @@ const updateSleep = asyncHandler(async (req, res) => {
 
   if (!sleep) {
     res.status(404);
-    throw new Error("Goal not found");
+    throw new Error("Sleep not found");
   }
 
-  const updatedGoal = await SleepModel.findByIdAndUpdate(
+  const updatedSleep = await SleepModel.findByIdAndUpdate(
     req.params.id,
     req.body,
     {
@@ -43,7 +43,7 @@ const updateSleep = asyncHandler(async (req, res) => {
     }
   );
 
-  res.status(200).json(updatedGoal);
+  res.status(200).json(updatedSleep);
 });
 
 const deleteSleep = asyncHandler(async (req, res) => {
@@ -51,7 +51,7 @@ const deleteSleep = asyncHandler(async (req, res) => {
 
   if (!sleep) {
     res.status(404);
-    throw new Error("Goal not found");
+    throw new Error("Sleep not found");
   }
   await sleep.remove();
 
