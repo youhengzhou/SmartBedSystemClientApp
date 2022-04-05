@@ -54,8 +54,6 @@ export default function AlarmData() {
       </table>
 
       <h1>Input Alarm Data In Time</h1>
-      <h2>{value}</h2>
-      <DateTime parentToChild={value} />
 
       <h1>Input Alarm Data</h1>
       <form onSubmit={handleSubmit}>
