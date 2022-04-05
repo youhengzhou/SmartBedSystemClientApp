@@ -1,42 +1,15 @@
 import { useState, useEffect } from "react";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import DateTimePicker from "@mui/lab/DateTimePicker";
 // const axios = require("axios");
 
 export default function SleepData() {
   const [data, setData] = useState([]);
 
-  //   const getGoals = async (token) => {
-  //     const response = await axios.get("/api/sleepdata");
-  //     return response.data;
-  //   };
-
-  //   axios
-  //     .get("/api/sleepdata")
-  //     .then((res) => {
-  //       console.log(res);
-  //       setData(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/api/sleepdata")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-  //   const getAllSleepData = () => {
-  //     axios
-  //       .get(`http://localhost:5000/api/sleepdata`, { withCredentials: true })
-  //       .then((response) => {
-  //         data(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.log(" error", error);
-  //       });
-  //   };
-
+  // call the API to retrieve sleep data
+  // get the response json, and set data state to json data
   const getAllSleepData = () => {
     fetch("http://localhost:5000/api/sleepdata")
       .then((response) => {
@@ -47,6 +20,7 @@ export default function SleepData() {
       });
   };
 
+  // upon page load, retrieve sleep data
   useEffect(() => {
     console.log("Retrieving Sleep Data");
     getAllSleepData();

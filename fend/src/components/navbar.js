@@ -27,15 +27,15 @@ export default function Navbar() {
         <span style={title} className="title">
           Smart Bed Systems User Application
         </span>
-        {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/create">
-                Create Record
+              <NavLink className="nav-link" to="/alarm">
+                Go To Alarm
               </NavLink>
             </li>
           </ul>
-        </div> */}
+        </div>
       </nav>
     </div>
   );

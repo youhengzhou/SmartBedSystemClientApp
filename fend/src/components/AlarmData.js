@@ -7,7 +7,7 @@ export default function AlarmData() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    axios.put("http://localhost:5000/api/alarm/623c081bd4c6f135856a1bf2", {
+    axios.put("http://localhost:5000/api/alarm/623cc9c9b18ccbbaae149734", {
       epoch: alarm,
     });
   };
