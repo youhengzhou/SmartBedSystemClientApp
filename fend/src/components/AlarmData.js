@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
+import DateTime from "./DateTime";
 const axios = require("axios");
 
 export default function AlarmData() {
   const [data, setData] = useState([]);
   const [alarm, setAlarm] = useState("");
+  const [value, setValue] = useState(new Date());
+
+  const parentToChild = () => {
+    setData("This is data from Parent Component to the Child Component.");
+  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -46,6 +52,11 @@ export default function AlarmData() {
           ))}
         </tbody>
       </table>
+
+      <h1>Input Alarm Data In Time</h1>
+      <h2>{value}</h2>
+      <DateTime parentToChild={value} />
+
       <h1>Input Alarm Data</h1>
       <form onSubmit={handleSubmit}>
         <label>
