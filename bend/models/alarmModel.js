@@ -8,6 +8,9 @@ const alarmModel = mongoose.Schema({
   epoch: {
     type: Number,
   },
+  epochTest: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("alarmModel", alarmModel, "alarmdata");
