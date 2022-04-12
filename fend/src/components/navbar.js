@@ -21,14 +21,17 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
-          <img style={{ width: 25 + "%" }} src={logo} alt="Logo"></img>
-        </NavLink>
+        <img style={{ width: 25 + "%" }} src={logo} alt="Logo"></img>
         <span style={title} className="title">
           Smart Bed Systems User Application
         </span>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                Go To Sleep Data
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/alarm">
                 Go To Alarm
