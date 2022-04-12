@@ -47,14 +47,14 @@ export default function AlarmData() {
         <thead>
           <tr>
             <th>Patient ID</th>
-            <th>Epoch</th>
+            <th>Alarm Time</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item) => (
             <tr key={item._id}>
               <td>{item.patientId}</td>
-              <td>{item.epoch}</td>
+              {/* <td>{item.epoch}</td> */}
               <td>{item.epochTest}</td>
             </tr>
           ))}
