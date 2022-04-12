@@ -5,6 +5,16 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 export default function SleepData() {
   const [data, setData] = useState([]);
+  const [xData, setXData] = useState([]);
+  const [yData, setYData] = useState([]);
+
+  var xxxepoch = [];
+  var xxxacceleration_x = [];
+  var xxxacceleration_y = [];
+  var xxxacceleration_z = [];
+  var xxxactivity_count = [];
+  var xxxheart_rate = [];
+  var xxxrem = [];
 
   // call the API to retrieve sleep data
   // get the response json, and set data state to json data
@@ -16,11 +26,23 @@ export default function SleepData() {
       .then((data) => {
         setData(data);
       });
+    xxxepoch = data.map((item) => item.epoch);
+    console.log(xxxepoch);
+    xxxacceleration_x = data.map((item) => item.acceleration_x);
+    xxxacceleration_y = data.map((item) => item.acceleration_y);
+    xxxacceleration_z = data.map((item) => item.acceleration_z);
+    xxxactivity_count = data.map((item) => item.activity_count);
+    xxxheart_rate = data.map((item) => item.heart_rate);
+    console.log(xxxheart_rate);
+    xxxrem = data.map((item) => item.rem);
+    setXData(xxxepoch);
+    setYData(xxxheart_rate);
+    // console.log(yData);
   };
 
   // upon page load, retrieve sleep data
   useEffect(() => {
-    console.log("Retrieving Sleep Data");
+    //console.log("Retrieving Sleep Data");
     getAllSleepData();
   });
 
@@ -55,71 +77,21 @@ export default function SleepData() {
           ))}
         </tbody>
       </table>
+      {"this is something"}
       <div>
         <Line
           data={{
-            labels: [
-              "22:00",
-              "23:00",
-              "00:00",
-              "01:00",
-              "02:00",
-              "03:00",
-              "04:00",
-              "05:00",
-              "06:00",
-            ],
+            labels: xData,
             datasets: [
               {
                 label: "REM Detection",
-                data: [1, 2, 3, 4, 2, 4, 3, 2, 1],
+                data: yData,
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderWidth: 1,
+                color: "rgba(255, 99, 132, 1)",
               },
             ],
-          }}
-          height={400}
-          width={600}
-          options={{
-            maintainAspectRatio: false,
-            scales: {
-              yAxis: {
-                suggestedMin: 0,
-                suggestedMax: 5,
-              },
-            },
-          }}
-        />
-      </div>
-      <div>
-        <Line
-          data={{
-            labels: [
-              "22:00",
-              "23:00",
-              "00:00",
-              "01:00",
-              "02:00",
-              "03:00",
-              "04:00",
-              "05:00",
-              "06:00",
-            ],
-            datasets: [
-              {
-                label: "Heart Rate",
-                data: [75, 73, 60, 62, 60, 68, 72, 75, 79],
-              },
-            ],
-          }}
-          height={400}
-          width={600}
-          options={{
-            maintainAspectRatio: false,
-            scales: {
-              yAxis: {
-                suggestedMin: 50,
-                suggestedMax: 90,
-              },
-            },
           }}
         />
       </div>
