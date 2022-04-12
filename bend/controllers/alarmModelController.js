@@ -17,6 +17,7 @@ const setAlarm = asyncHandler(async (req, res) => {
   const alarm = await AlarmModel.create({
     patientId: req.body.patientId,
     epoch: req.body.epoch,
+    epochTest: req.body.epochTest,
   });
 
   res.status(200).json(alarm);
