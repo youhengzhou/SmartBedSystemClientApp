@@ -9,6 +9,7 @@ export default function SleepData() {
   const [yData, setYData] = useState([]);
 
   var xxxepoch = [];
+  var xxxtime = [];
   var xxxacceleration_x = [];
   var xxxacceleration_y = [];
   var xxxacceleration_z = [];
@@ -27,6 +28,7 @@ export default function SleepData() {
         setData(data);
       });
     xxxepoch = data.map((item) => item.epoch);
+    xxxtime = data.map((item) => item.epochString);
     console.log(xxxepoch);
     xxxacceleration_x = data.map((item) => item.acceleration_x);
     xxxacceleration_y = data.map((item) => item.acceleration_y);
@@ -53,11 +55,11 @@ export default function SleepData() {
         <thead>
           <tr>
             <th>Patient ID</th>
-            <th>Epoch</th>
-            <th>Acceleration X</th>
+            <th>Time</th>
+            {/* <th>Acceleration X</th>
             <th>Acceleration Y</th>
             <th>Acceleration Z</th>
-            <th>Activity Count</th>
+            <th>Activity Count</th> */}
             <th>Heart Rate</th>
             <th>REM Stage</th>
           </tr>
@@ -66,19 +68,26 @@ export default function SleepData() {
           {data.map((item) => (
             <tr key={item._id}>
               <td>{item.patientId}</td>
-              <td>{item.epoch}</td>
-              <td>{item.acceleration_x}</td>
+              {/* <td>{item.epoch}</td> */}
+              <td>{item.epochString}</td>
+              {/* <td>{item.acceleration_x}</td>
               <td>{item.acceleration_y}</td>
               <td>{item.acceleration_z}</td>
-              <td>{item.activity_count}</td>
+              <td>{item.activity_count}</td> */}
               <td>{item.heart_rate}</td>
               <td>{item.rem}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      {"this is something"}
-      <div>
+      <div
+        style={{
+          height: "20vh",
+          position: "relative",
+          marginBottom: "1%",
+          padding: "1%",
+        }}
+      >
         <Line
           data={{
             labels: xData,
@@ -92,7 +101,17 @@ export default function SleepData() {
                 color: "rgba(255, 99, 132, 1)",
               },
             ],
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
           }}
+          height="200px"
+          width="200px"
         />
       </div>
     </div>

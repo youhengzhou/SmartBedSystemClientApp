@@ -9,6 +9,9 @@ const sleepSchema = mongoose.Schema(
     epoch: {
       type: Number,
     },
+    epochString: {
+      type: String,
+    },
     acceleration_x: {
       type: Number,
     },

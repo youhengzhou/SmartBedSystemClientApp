@@ -30,8 +30,13 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                View Sleep Data
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to="/alarm">
-                Go To Alarm
+                Set New Alarm
               </NavLink>
             </li>
           </ul>
