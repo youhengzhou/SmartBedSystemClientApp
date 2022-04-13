@@ -13,14 +13,14 @@ export default function AlarmData() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    axios.put("http://localhost:5000/api/alarm/624e83daaa4e17ae7a3ad05c", {
+    axios.put("http://localhost:5000/api/alarm/62562013abf057a469688781", {
       epoch: alarm,
     });
   };
 
   const sendAlarm = () => {
     console.log("sending user GUI picked alarm data");
-    axios.put("http://localhost:5000/api/alarm/624e83daaa4e17ae7a3ad05c", {
+    axios.put("http://localhost:5000/api/alarm/62562013abf057a469688781", {
       epochTest: dateValue.toString(),
     });
   };
@@ -42,11 +42,11 @@ export default function AlarmData() {
 
   return (
     <div>
-      <h1>Alarm Data</h1>
+      <h1>Currently Active Alarm</h1>
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Patient ID</th>
+            <th>User Name</th>
             <th>Alarm Time</th>
           </tr>
         </thead>
@@ -61,7 +61,7 @@ export default function AlarmData() {
         </tbody>
       </table>
       <div>
-        <h1>Input Alarm Data In Time</h1>
+        <h1>Select New Alarm</h1>
         <div style={{ position: "relative", bottom: "2px" }}>
           <p>Selected Alarm Time: {dateValue.toString()}</p>
         </div>
@@ -78,7 +78,7 @@ export default function AlarmData() {
           </LocalizationProvider>
         </div>
         <div style={{ position: "relative", top: "10px" }}>
-          <button onClick={sendAlarm}>Set Alarm Time</button>
+          <button onClick={sendAlarm}>Set New Alarm Time</button>
         </div>
       </div>
       {/* <h1>Input Alarm Data (Legacy)</h1>

@@ -17,6 +17,7 @@ const setSleep = asyncHandler(async (req, res) => {
   const sleep = await SleepModel.create({
     patientId: req.body.patientId,
     epoch: req.body.epoch,
+    epochString: req.body.epochString,
     acceleration_x: req.body.acceleration_x,
     acceleration_y: req.body.acceleration_y,
     acceleration_z: req.body.acceleration_z,
